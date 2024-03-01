@@ -4,6 +4,7 @@ import { FlashCards } from "./Flashcards";
 import { Accordion } from "./Accordion";
 import { Steps } from "./Steps";
 import { messages } from "./data";
+import { TipCalculator } from "./TipCalculator";
 
 function App() {
   const maxValue = messages.length;
@@ -38,6 +39,7 @@ function App() {
       <DateCounter />
       <FlashCards />
       <Accordion />
+      <TipCalculator />
     </div>
   );
 }

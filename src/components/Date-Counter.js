@@ -15,7 +15,7 @@ export const DateCounter = () => {
   return (
     <section className="date">
       <div className="date__steps">
-        <label for="range">Set step</label>
+        <label htmlFor="range">Set step</label>
         <input
           type="range"
           min="0"

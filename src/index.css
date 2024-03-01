@@ -11,6 +11,25 @@ body {
   margin: 100px auto;
 }
 
+input,
+select {
+  padding: 10px 20px;
+  border: 2px solid #7950f2;
+  border-radius: 10px;
+  width: 100%;
+}
+
+input,
+.select {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
 .steps {
   max-width: 600px;
   background-color: #f7f7f7;
@@ -35,7 +54,7 @@ body {
 }
 
 .numbers .active,
-.buttons button.active {
+button.active {
   background-color: #7950f2;
   color: #fff;
 }
@@ -56,18 +75,23 @@ body {
   justify-content: space-between;
 }
 
-.buttons button {
+button {
   border: none;
   padding: 10px 15px;
-  border-radius: 100px;
+  border-radius: 10px;
   font-size: 14px;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: 0.3s ease all;
 }
 
-.buttons button.active {
+button:hover {
+  background-color: #087f5b;
+}
+
+button.active {
   cursor: pointer;
 }
 
@@ -248,5 +272,18 @@ div.selected {
 
 .open .number,
 .open .text {
+  color: #087f5b;
+}
+
+.tip-calculator {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.output {
+  font-weight: 600;
+}
+
+.output-price {
   color: #087f5b;
 }
