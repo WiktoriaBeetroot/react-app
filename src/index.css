@@ -19,11 +19,6 @@ select {
   width: 100%;
 }
 
-input,
-.select {
-  margin-bottom: 15px;
-}
-
 label {
   display: block;
   margin-right: 15px;
@@ -136,6 +131,10 @@ h3 {
     span {
       margin: 0 10px;
     }
+  }
+
+  .date__steps {
+    flex-wrap: wrap;
   }
 
   button {
@@ -278,6 +277,10 @@ div.selected {
 .tip-calculator {
   max-width: 600px;
   margin: 0 auto;
+}
+
+.tip-calculator > * {
+  margin-bottom: 15px;
 }
 
 .output {
