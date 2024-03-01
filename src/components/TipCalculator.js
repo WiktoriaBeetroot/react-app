@@ -11,6 +11,13 @@ export const TipCalculator = () => {
   let tipAmout = (avaragePer * Number(billValue)) / 100;
   let totalBill = Number(billValue) + tipAmout;
 
+  const handleBillChange = (e) => {
+    const value = e.target.value;
+    if (value >= 0) {
+      setBillValue(value);
+    }
+  };
+
   function resetCalculator() {
     setBillValue(0);
     setPercentageOwn(0);
@@ -20,10 +27,7 @@ export const TipCalculator = () => {
   return (
     <section className="tip-calculator">
       <h2>Tip Calculator</h2>
-      <Bill
-        billValue={billValue}
-        onChangeBill={(e) => setBillValue(e.target.value)}
-      />
+      <Bill billValue={billValue} onChangeBill={handleBillChange} />
       <Percentage
         percentage={percentageOwn}
         onChangePercentage={(e) => setPercentageOwn(Number(e.target.value))}
