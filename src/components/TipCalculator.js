@@ -8,7 +8,7 @@ export const TipCalculator = () => {
   const [percentageOwn, setPercentageOwn] = useState(0);
   const [percentageOther, setPercentageOther] = useState(0);
   let avaragePer = (percentageOwn + percentageOther) / 2;
-  let tipAmout = Math.round((avaragePer * Number(billValue)) / 100);
+  let tipAmout = (avaragePer * Number(billValue)) / 100;
   let totalBill = Number(billValue) + tipAmout;
 
   function resetCalculator() {
