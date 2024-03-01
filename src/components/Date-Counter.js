@@ -18,7 +18,7 @@ export const DateCounter = () => {
         <label htmlFor="range">Set step</label>
         <input
           type="range"
-          min="0"
+          min="1"
           max="10"
           name="range"
           value={step}
