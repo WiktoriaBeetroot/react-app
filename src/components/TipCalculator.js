@@ -27,6 +27,10 @@ export const TipCalculator = () => {
   return (
     <section className="tip-calculator">
       <h2>Tip Calculator</h2>
+      <p>
+        The size of the tip is determined by the average level of satisfaction
+        with the service.
+      </p>
       <Bill billValue={billValue} onChangeBill={handleBillChange} />
       <Percentage
         percentage={percentageOwn}
