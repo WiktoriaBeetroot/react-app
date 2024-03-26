@@ -290,3 +290,11 @@ div.selected {
 .output-price {
   color: #087f5b;
 }
+
+.collapse-text {
+  max-width: 600px;
+}
+
+.full {
+  max-width: 90%;
+}
