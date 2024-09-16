@@ -7,6 +7,7 @@ import { TipCalculator } from "./TipCalculator";
 import { Expander } from "./Expander";
 import { Converter } from "./Converter";
 import { Navigation } from "./Navigation";
+import { Location } from "./location";
 
 function App() {
   const sliderRef = useRef(null);
@@ -16,6 +17,7 @@ function App() {
   const calculatorRef = useRef(null);
   const collapseRef = useRef(null);
   const converterRef = useRef(null);
+  const locationRef = useRef(null);
 
   return (
     <div className="container">
@@ -27,6 +29,7 @@ function App() {
           calculatorRef={calculatorRef}
           collapseRef={collapseRef}
           converterRef={converterRef}
+          locationRef={locationRef}
         />
         <Steps
           ref={sliderRef}
@@ -73,6 +76,7 @@ function App() {
       </Expander>
 
       <Converter ref={converterRef}/>
+      <Location ref={locationRef}/>
     </div>
   );
 }

@@ -386,3 +386,11 @@ div.selected {
 .menu-open {
   overflow: hidden;
 }
+
+.location {
+  max-width: 600px;
+}
+
+.location h2 {
+  text-align: center;
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState, forwardRef, useRef } from "react";
 
 export const Navigation = forwardRef((props, ref) => {
-    const { sliderRef, dateRef, cardsRef, accordionRef, calculatorRef, collapseRef, converterRef } = props;
+    const { sliderRef, dateRef, cardsRef, accordionRef, calculatorRef, collapseRef, converterRef, locationRef } = props;
     const [isOpen, setIsOpen] = useState(false);
     const [headerHeight, setHeaderHeight] = useState(0);
     const navigation = useRef(null);
@@ -15,6 +15,7 @@ export const Navigation = forwardRef((props, ref) => {
         calculator: calculatorRef.current,
         collapse: collapseRef.current,
         converter: converterRef.current,
+        location: locationRef.current,
     };
 
     useEffect(() => {
@@ -64,6 +65,7 @@ export const Navigation = forwardRef((props, ref) => {
                     <li><a href="#calculator" onClick={handleMenuToggle}>Calculator</a></li>
                     <li><a href="#collapse" onClick={handleMenuToggle}>Collapse Text</a></li>
                     <li><a href="#converter" onClick={handleMenuToggle}>Currency Converter</a></li>
+                    <li><a href="#location" onClick={handleMenuToggle}>Location</a></li>
                 </ul>
             </div>
         </div>
