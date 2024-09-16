@@ -5,6 +5,7 @@
 body {
   font-family: sans-serif;
   color: #333;
+  margin: 0;
 }
 
 .container > section {
@@ -83,7 +84,7 @@ button {
 }
 
 button:hover {
-  background-color: #087f5b;
+  background-color: #a28fdd;
 }
 
 button.active {
@@ -322,4 +323,59 @@ div.selected {
 .converter__output {
   text-align: center;
   font-weight: 700;
+}
+
+.navigation {
+  background-color: #7950f2;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.navigation__container {
+  padding: 10px;
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.navigation__container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+  transform: translateX(-100%);
+  transition: 0.3s transform ease;
+  padding: 50px 20px;
+}
+
+.navigation__container ul.open {
+  transform: translateX(0);
+}
+
+.navigation__container ul li {
+  margin-bottom: 10px;
+}
+
+.navigation__container ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s all ease;
+}
+
+.navigation__container ul li a:hover {
+  color: #7950f2;
+}
+
+.menu-open {
+  overflow: hidden;
 }

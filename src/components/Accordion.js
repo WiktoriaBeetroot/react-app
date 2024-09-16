@@ -1,12 +1,12 @@
 import { faqs } from "./data";
 import { AccordionItem } from "./AccordionItem";
-import { useState } from "react";
+import React, { useState, forwardRef } from "react";
 
-export const Accordion = () => {
+export const Accordion = forwardRef((props, ref) => {
   const [curOpen, setCurOpen] = useState(null);
 
   return (
-    <div className="accordion">
+    <div className="accordion" id="accordion" ref={ref}>
       {faqs.map((item, index) => (
         <AccordionItem
           item={item}
@@ -20,4 +20,4 @@ export const Accordion = () => {
       ))}
     </div>
   );
-};
+});

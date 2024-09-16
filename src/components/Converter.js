@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, forwardRef } from "react"
 
-export const Converter = () => {
+export const Converter = forwardRef((props, ref) => {
     const [from, setFrom] = useState('USD');
     const [to, setTo] = useState('EUR');
     const [enteredAmount, setEnteredAmount] = useState(0);
@@ -41,7 +41,7 @@ export const Converter = () => {
     }, [enteredAmount, from, to])
 
     return (
-        <section className="converter">
+        <section className="converter" id="converter" ref={ref}>
             <h2>Currency converter</h2>
 
             <div className="converter__content">
@@ -77,4 +77,4 @@ export const Converter = () => {
             }
       </section>
     )
-}
+})

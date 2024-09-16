@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import { Bill } from "./Bill";
 import { Percentage } from "./Percentage";
 import { Output } from "./Output";
 
-export const TipCalculator = () => {
+export const TipCalculator = forwardRef((props, ref) => {
   const [billValue, setBillValue] = useState(0);
   const [percentageOwn, setPercentageOwn] = useState(0);
   const [percentageOther, setPercentageOther] = useState(0);
@@ -25,7 +25,7 @@ export const TipCalculator = () => {
   }
 
   return (
-    <section className="tip-calculator">
+    <section className="tip-calculator" id="calculator" ref={ref}>
       <h2>Tip Calculator</h2>
       <p>
         The size of the tip is determined by the average level of satisfaction
@@ -52,4 +52,4 @@ export const TipCalculator = () => {
       />
     </section>
   );
-};
+});

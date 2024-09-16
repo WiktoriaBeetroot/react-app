@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState, forwardRef } from "react";
 
-export const DateCounter = () => {
+
+export const DateCounter = forwardRef((props, ref) => {
   const [step, setStep] = useState(1);
   const [count, setCount] = useState(0);
 
@@ -13,7 +14,7 @@ export const DateCounter = () => {
   }
 
   return (
-    <section className="date">
+    <section className="date" id="date" ref={ref}>
       <div className="date__steps">
         <label htmlFor="range">Set step</label>
         <input
@@ -59,4 +60,4 @@ export const DateCounter = () => {
       </div>
     </section>
   );
-};
+});

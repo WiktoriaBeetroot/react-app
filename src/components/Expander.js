@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 
-export const Expander = ({
+export const Expander = forwardRef(({
   children,
   collapseButtonText = "Hide text",
   expandButtonText = "Show text",
@@ -8,7 +8,7 @@ export const Expander = ({
   collapsedNumWords = 15,
   expandedDefault = true,
   className = "",
-}) => {
+}, ref) => {
   const buttonStyles = {
     background: "none",
     border: "none",
@@ -23,11 +23,11 @@ export const Expander = ({
   const collapsedText =
     children.split(" ").slice(0, collapsedNumWords).join(" ") + "...";
   return (
-    <section className={`collapse-text ${className}`}>
+    <section className={`collapse-text ${className}`} id="collapse" ref={ref}>
       {expanded ? children : collapsedText}
       <button style={buttonStyles} onClick={() => setExpanded(!expanded)}>
         {expanded ? collapseButtonText : expandButtonText}
       </button>
     </section>
   );
-};
+});
