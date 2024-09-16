@@ -1,18 +1,14 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { DateCounter } from "./Date-Counter";
 import { FlashCards } from "./Flashcards";
 import { Accordion } from "./Accordion";
 import { Steps } from "./Steps";
-import { messages } from "./data";
 import { TipCalculator } from "./TipCalculator";
 import { Expander } from "./Expander";
 import { Converter } from "./Converter";
 import { Navigation } from "./Navigation";
 
 function App() {
-  const maxValue = messages.length;
-  const [step, setStep] = useState(1);
-  const [isOpen, setIsOpen] = useState(true);
   const sliderRef = useRef(null);
   const dateRef = useRef(null);
   const cardsRef = useRef(null);
@@ -21,41 +17,21 @@ function App() {
   const collapseRef = useRef(null);
   const converterRef = useRef(null);
 
-  function nextStep() {
-    step < maxValue && setStep((currentStep) => currentStep + 1);
-  }
-
-  function prevStep() {
-    step !== 1 && setStep((currentStep) => currentStep - 1);
-  }
-
-  function toggleClose() {
-    setIsOpen((currentOpen) => !currentOpen);
-  }
-
   return (
     <div className="container">
         <Navigation
-                sliderRef={sliderRef}
-                dateRef={dateRef}
-                cardsRef={cardsRef}
-                accordionRef={accordionRef}
-                calculatorRef={calculatorRef}
-                collapseRef={collapseRef}
-                converterRef={converterRef}
-            />
-      <button className="close" onClick={toggleClose}>
-        {isOpen ? "✕" : "+"}
-      </button>
-      {isOpen && (
+          sliderRef={sliderRef}
+          dateRef={dateRef}
+          cardsRef={cardsRef}
+          accordionRef={accordionRef}
+          calculatorRef={calculatorRef}
+          collapseRef={collapseRef}
+          converterRef={converterRef}
+        />
         <Steps
           ref={sliderRef}
-          step={step}
-          next={nextStep}
-          prev={prevStep}
-          maxValue={maxValue}
         />
-      )}
+
       <DateCounter 
         ref={dateRef}
       />

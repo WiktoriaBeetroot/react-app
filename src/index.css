@@ -31,6 +31,7 @@ label {
   background-color: #f7f7f7;
   border-radius: 7px;
   padding: 25px 100px;
+  margin: 0 auto;
 }
 
 .numbers {
@@ -103,7 +104,7 @@ h3 {
 
 .close {
   position: absolute;
-  top: 16px;
+  top: 56px;
   right: 16px;
   border: none;
   background: none;
@@ -159,6 +160,12 @@ h3 {
 }
 
 @media screen and (min-width: 768px) {
+  .flashcards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   .flashcards {
     grid-template-columns: 1fr 1fr 1fr;
   }

@@ -45,7 +45,6 @@ export const Navigation = forwardRef((props, ref) => {
             const targetPosition = targetElement.getBoundingClientRect().top;
             const scrollPosition = window.scrollY + targetPosition - headerHeight;
 
-            // Smooth scroll to the element
             window.scrollTo({
                 top: scrollPosition,
                 behavior: 'smooth',
