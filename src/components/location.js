@@ -1,39 +1,21 @@
-import { useState, forwardRef } from "react";
+import { forwardRef, useState } from "react";
+import { useLocation } from "./useLocation";
 
 export const Location = forwardRef((props, ref) => {
-    const [isLoading, setIsLoading] = useState(false);
     const [countClicks, setCountClicks] = useState(0);
-    const [position, setPosition] = useState({});
-    const [error, setError] = useState(null);
+    const { isLoading, position, error, getPosition }  = useLocation();
 
     const { lat, lng } = position;
 
-    function getPosition() {
+    function handleClick() {
         setCountClicks((count) => count + 1);
-
-        if (!navigator.geolocation)
-        return setError("Your browser does not support geolocation");
-
-        setIsLoading(true);
-        navigator.geolocation.getCurrentPosition(
-        (pos) => {
-            setPosition({
-            lat: pos.coords.latitude,
-            lng: pos.coords.longitude
-            });
-            setIsLoading(false);
-        },
-        (error) => {
-            setError(error.message);
-            setIsLoading(false);
-        }
-        );
+        getPosition()
     }
 
     return (
         <section className="location" ref={ref}>
             <h2>Get position by OpenStreetMap</h2>
-            <button onClick={getPosition} disabled={isLoading}>
+            <button onClick={handleClick} disabled={isLoading}>
                 Get my position
             </button>
 
