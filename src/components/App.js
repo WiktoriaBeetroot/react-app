@@ -6,6 +6,7 @@ import { Steps } from "./Steps";
 import { messages } from "./data";
 import { TipCalculator } from "./TipCalculator";
 import { Expander } from "./Expander";
+import { Converter } from "./Converter";
 
 function App() {
   const maxValue = messages.length;
@@ -66,6 +67,8 @@ function App() {
         travel is a pretty cool thing to think about. Who knows what we'll
         discover next!
       </Expander>
+
+      <Converter></Converter>
     </div>
   );
 }

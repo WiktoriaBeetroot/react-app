@@ -13,7 +13,7 @@ body {
 
 input,
 select {
-  padding: 10px 20px;
+  padding: 10px;
   border: 2px solid #7950f2;
   border-radius: 10px;
   width: 100%;
@@ -297,4 +297,29 @@ div.selected {
 
 .full {
   max-width: 90%;
+}
+
+.converter {
+  max-width: 600px;
+}
+
+.converter {
+  h2 {
+    text-align: center;
+  }
+
+  label {
+    font-weight: 600;
+  }
+}
+
+.converter__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.converter__output {
+  text-align: center;
+  font-weight: 700;
 }
